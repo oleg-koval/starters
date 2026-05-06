@@ -2,6 +2,11 @@
 
 Instructions for AI coding agents (Claude Code, Codex, Cursor, Copilot).
 
+## Hard rules
+
+All `oleg-koval/*` starter repos obey the rules in [`RULES.md`](./RULES.md).
+Load it at the start of any session in a starter. See [`SKILL.md`](./SKILL.md) for the activation workflow (`olko:starter-rules`).
+
 ## What this repo is
 
 Auto-generated index of all GitHub template repositories owned by @oleg-koval.
