@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Primary meta -->
+<title>starters · production-ready scaffolds for TypeScript, Python, Go</title>
+<meta name="description" content="One-command project scaffolds with AGENTS.md, conventional commits, GitHub Actions CI, and Dependabot baked in. Free. MIT. Maintained by Oleg Koval.">
+<meta name="keywords" content="starter template, project scaffold, typescript starter, python starter, go starter, AGENTS.md, conventional commits, github template, npx scaffold, uv ruff ty, golangci-lint">
+<meta name="author" content="Oleg Koval">
+<link rel="canonical" href="https://starters.olegkoval.com/">
+
+<!-- Theme color -->
+<meta name="theme-color" content="#0d1117">
+<meta name="color-scheme" content="dark">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://starters.olegkoval.com/">
+<meta property="og:title" content="starters · production-ready scaffolds for TypeScript, Python, Go">
+<meta property="og:description" content="One-command project scaffolds with AGENTS.md, conventional commits, GitHub Actions CI, and Dependabot baked in.">
+<meta property="og:image" content="https://starters.olegkoval.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="oleg-koval/starters">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@olegkoval">
+<meta name="twitter:creator" content="@olegkoval">
+<meta name="twitter:title" content="starters · production-ready scaffolds for TS, Python, Go">
+<meta name="twitter:description" content="One-command project scaffolds with AGENTS.md, conventional commits, CI, and Dependabot baked in.">
+<meta name="twitter:image" content="https://starters.olegkoval.com/og.png">
+
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22><text y=%2214%22 font-size=%2214%22>⚡</text></svg>">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- Preconnect -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Geist:wght@400;500;600;700&display=swap">
+
+<!-- JSON-LD structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareSourceCode",
+  "name": "oleg-koval/starters",
+  "description": "Production-ready project scaffolds for TypeScript, Python, and Go with AGENTS.md, Conventional Commits, CI, and Dependabot.",
+  "codeRepository": "https://github.com/oleg-koval/starters",
+  "programmingLanguage": ["TypeScript", "Python", "Go"],
+  "license": "https://opensource.org/licenses/MIT",
+  "author": {
+    "@type": "Person",
+    "name": "Oleg Koval",
+    "url": "https://github.com/oleg-koval",
+    "sameAs": [
+      "https://github.com/oleg-koval",
+      "https://www.olegkoval.com"
+    ]
+  },
+  "url": "https://starters.olegkoval.com/",
+  "keywords": "starter template, project scaffold, typescript, python, go, AGENTS.md, conventional commits, github actions"
+}
+</script>
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0a0a0b;
+  --bg-elev: #111114;
+  --bg-elev-2: #16161a;
+  --border: #1f1f24;
+  --border-hover: #2a2a30;
+  --text: #ededed;
+  --text-dim: #a0a0a8;
+  --text-muted: #6b6b73;
+  --accent: #7eb6ff;
+  --accent-glow: rgba(126, 182, 255, 0.15);
+  --green: #7ee787;
+  --yellow: #f0c674;
+  --red: #ff7b72;
+  --purple: #d2a8ff;
+  --cyan: #79c0ff;
+  --pink: #ffa7c4;
+
+  --font-mono: 'Geist Mono', 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  --font-sans: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Subtle noise texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 25% 30%, rgba(126, 182, 255, 0.04), transparent 50%),
+    radial-gradient(circle at 75% 70%, rgba(210, 168, 255, 0.03), transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+/* Nav */
+nav {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: rgba(10, 10, 11, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 10;
+}
+
+.nav-inner { display: flex; align-items: center; justify-content: space-between; }
+
+.logo {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.logo::before { content: '⚡'; font-size: 18px; }
+
+.nav-links { display: flex; gap: 24px; align-items: center; }
+.nav-links a {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.15s;
+}
+.nav-links a:hover { color: var(--text); }
+.nav-links .gh-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg-elev);
+}
+.nav-links .gh-link:hover { border-color: var(--border-hover); background: var(--bg-elev-2); }
+
+/* Hero */
+.hero { padding: 80px 0 60px; }
+.hero-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 60px; align-items: center; }
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent);
+  background: var(--accent-glow);
+  border: 1px solid rgba(126, 182, 255, 0.2);
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 20px;
+}
+.hero-eyebrow .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+h1.hero-title {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+.hero-title .accent {
+  background: linear-gradient(135deg, var(--accent), var(--purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub {
+  font-size: 18px;
+  color: var(--text-dim);
+  margin-bottom: 32px;
+  max-width: 540px;
+  line-height: 1.6;
+}
+
+.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: all 0.15s;
+  cursor: pointer;
+  font-family: inherit;
+}
+.btn-primary {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+}
+.btn-primary:hover { background: #fff; transform: translateY(-1px); }
+.btn-ghost {
+  background: var(--bg-elev);
+  color: var(--text);
+  border-color: var(--border);
+}
+.btn-ghost:hover { border-color: var(--border-hover); background: var(--bg-elev-2); }
+
+/* Terminal */
+.terminal {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.02) inset;
+}
+.terminal-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-elev-2);
+}
+.terminal-dots { display: flex; gap: 6px; }
+.terminal-dots span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.terminal-dots span:nth-child(1) { background: #ff5f57; }
+.terminal-dots span:nth-child(2) { background: #febc2e; }
+.terminal-dots span:nth-child(3) { background: #28c840; }
+.terminal-title {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 0 auto;
+  padding-right: 50px;
+}
+.terminal-body {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.7;
+  padding: 18px 20px;
+  min-height: 380px;
+  color: var(--text);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.prompt { color: var(--green); }
+.cmd { color: var(--text); }
+.output { color: var(--text-dim); }
+.success { color: var(--green); }
+.info { color: var(--cyan); }
+.path { color: var(--purple); }
+.muted { color: var(--text-muted); }
+.cursor {
+  display: inline-block;
+  width: 8px;
+  height: 14px;
+  background: var(--accent);
+  vertical-align: text-bottom;
+  margin-left: 2px;
+  animation: blink 1s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+/* Stats row */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin: 60px 0 80px;
+  padding: 32px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.stat-num {
+  font-family: var(--font-mono);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+.stat-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 4px;
+}
+
+/* Templates section */
+section { padding: 60px 0; }
+section h2 {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+section .section-sub {
+  font-size: 16px;
+  color: var(--text-dim);
+  margin-bottom: 40px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+.card {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--card-color, transparent) 0%, transparent 60%);
+  opacity: 0.05;
+  pointer-events: none;
+}
+.card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-icon {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: var(--bg-elev-2);
+  border: 1px solid var(--border);
+  color: var(--card-color, var(--text));
+}
+.card-stars {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.card-name {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+.card-desc {
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.5;
+  flex-grow: 1;
+}
+.card-cmd {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent);
+  background: var(--bg);
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+.card-cmd::before { content: '$ '; color: var(--text-muted); }
+
+.card.ts { --card-color: var(--cyan); }
+.card.py { --card-color: var(--yellow); }
+.card.go { --card-color: var(--accent); }
+.card.saas { --card-color: var(--pink); }
+
+/* Features */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+.feature {
+  padding: 24px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.feature-icon {
+  font-size: 24px;
+  margin-bottom: 12px;
+  display: block;
+}
+.feature h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.feature p {
+  font-size: 14px;
+  color: var(--text-dim);
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 40px 0;
+  margin-top: 80px;
+  text-align: center;
+}
+footer p {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+footer a { color: var(--text-dim); text-decoration: none; }
+footer a:hover { color: var(--text); }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero { padding: 40px 0; }
+  .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+  .stats { grid-template-columns: repeat(2, 1fr); padding: 20px; }
+  section { padding: 40px 0; }
+  section h2 { font-size: 24px; }
+  .nav-links a:not(.gh-link) { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="/" class="logo">starters</a>
+    <div class="nav-links">
+      <a href="#templates">templates</a>
+      <a href="#why">why</a>
+      <a href="https://github.com/oleg-koval/starters" class="gh-link" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        github
+      </a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <span class="hero-eyebrow"><span class="dot"></span>auto-rebuilt daily</span>
+        <h1 class="hero-title">
+          ship your project<br>
+          on the <span class="accent">first commit</span>
+        </h1>
+        <p class="hero-sub">
+          Production-ready scaffolds for TypeScript, Python, and Go.
+          AGENTS.md, conventional commits, GitHub Actions CI, and Dependabot
+          baked in. One command, zero config.
+        </p>
+        <div class="hero-cta">
+          <a href="#templates" class="btn btn-primary">
+            browse templates
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="https://github.com/oleg-koval/starters" class="btn btn-ghost" rel="noopener">
+            view on github
+          </a>
+        </div>
+      </div>
+
+      <div class="terminal" aria-label="Animated terminal demo">
+        <div class="terminal-header">
+          <div class="terminal-dots"><span></span><span></span><span></span></div>
+          <div class="terminal-title">~/oss/mine</div>
+        </div>
+        <div class="terminal-body" id="term"></div>
+      </div>
+    </div>
+
+    <div class="stats" id="stats">
+      <div>
+        <div class="stat-num" id="stat-tpl">4</div>
+        <div class="stat-label">templates</div>
+      </div>
+      <div>
+        <div class="stat-num">3</div>
+        <div class="stat-label">languages</div>
+      </div>
+      <div>
+        <div class="stat-num">∞</div>
+        <div class="stat-label">projects shipped</div>
+      </div>
+      <div>
+        <div class="stat-num">MIT</div>
+        <div class="stat-label">license</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="templates">
+  <div class="container">
+    <h2>Templates</h2>
+    <p class="section-sub">Pick a starter, run one command, push to GitHub. The CI is already green.</p>
+
+    <div class="cards">
+      <a href="https://github.com/oleg-koval/ts-npm-starter" class="card ts" rel="noopener">
+        <div class="card-head">
+          <span class="card-icon">TS</span>
+          <span class="card-stars">★ 1</span>
+        </div>
+        <div class="card-name">ts-npm-starter</div>
+        <p class="card-desc">TypeScript / Node starter with tsup, vitest, semantic-release, and TypeDoc. Publish-ready npm packages.</p>
+        <code class="card-cmd">gh repo create my-lib --template oleg-koval/ts-npm-starter</code>
+      </a>
+
+      <a href="https://github.com/oleg-koval/py-starter" class="card py" rel="noopener">
+        <div class="card-head">
+          <span class="card-icon">PY</span>
+          <span class="card-stars">★ 1</span>
+        </div>
+        <div class="card-name">py-starter</div>
+        <p class="card-desc">Python starter using uv, ruff, ty, and pytest. Modern stack, src layout, ready for PyPI.</p>
+        <code class="card-cmd">gh repo create my-lib --template oleg-koval/py-starter</code>
+      </a>
+
+      <a href="https://github.com/oleg-koval/go-starter" class="card go" rel="noopener">
+        <div class="card-head">
+          <span class="card-icon">GO</span>
+          <span class="card-stars">★ 1</span>
+        </div>
+        <div class="card-name">go-starter</div>
+        <p class="card-desc">Go starter with standard layout, golangci-lint, Makefile targets, and race-detector tests.</p>
+        <code class="card-cmd">gh repo create my-app --template oleg-koval/go-starter</code>
+      </a>
+
+      <a href="https://github.com/oleg-koval/saas-init" class="card saas" rel="noopener">
+        <div class="card-head">
+          <span class="card-icon">SAAS</span>
+          <span class="card-stars">★ 4</span>
+        </div>
+        <div class="card-name">saas-init</div>
+        <p class="card-desc">CLI scaffolding for production SaaS apps with Next.js, auth, payments, database, email.</p>
+        <code class="card-cmd">npx saas-init my-saas</code>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="container">
+    <h2>What's baked in</h2>
+    <p class="section-sub">Every template ships with the same conventions, so you don't have to think.</p>
+
+    <div class="features">
+      <div class="feature">
+        <span class="feature-icon">🤖</span>
+        <h3>AGENTS.md</h3>
+        <p>Hand-written instructions for Claude Code, Codex, Cursor, and Copilot. Open standard.</p>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">📝</span>
+        <h3>Conventional Commits</h3>
+        <p>Drives semantic versioning automatically. <code>feat:</code>, <code>fix:</code>, <code>feat!:</code> just work.</p>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">⚡</span>
+        <h3>GitHub Actions CI</h3>
+        <p>Tests, linting, and type-checking run on every PR. Matrix-tested on multiple language versions.</p>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">🔄</span>
+        <h3>Dependabot</h3>
+        <p>Weekly dependency updates. Both language deps and GitHub Actions stay current automatically.</p>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">📜</span>
+        <h3>MIT License</h3>
+        <p>Permissive license. Use it commercially. No strings attached.</p>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">🛠️</span>
+        <h3>Editor config</h3>
+        <p>Consistent formatting across VS Code, Cursor, JetBrains, and any editor that respects .editorconfig.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>
+      Built by <a href="https://github.com/oleg-koval" rel="noopener">Oleg Koval</a> ·
+      <a href="https://github.com/oleg-koval/starters" rel="noopener">source</a> ·
+      <a href="https://www.olegkoval.com/blog" rel="noopener">blog</a> ·
+      MIT licensed
+    </p>
+  </div>
+</footer>
+
+<script>
+// Terminal animation - types out a real workflow
+const lines = [
+  { t: 800,  c: 'prompt', x: '$ ' },
+  { t: 50,   c: 'cmd',    x: 'gh repo create my-cool-lib --template oleg-koval/py-starter --public --clone' },
+  { t: 600,  c: 'output', x: '\n✓ Created repository oleg-koval/my-cool-lib on GitHub' },
+  { t: 200,  c: 'output', x: '\n✓ Cloned to current directory' },
+  { t: 400,  c: 'prompt', x: '\n\n$ ' },
+  { t: 50,   c: 'cmd',    x: 'cd my-cool-lib && uv sync' },
+  { t: 700,  c: 'info',   x: '\nResolved 14 packages in 0.41s' },
+  { t: 100,  c: 'info',   x: '\nInstalled 14 packages in 28ms' },
+  { t: 100,  c: 'success',x: '\n+ pytest==8.3.4   + ruff==0.7.4   + ty==0.0.34' },
+  { t: 400,  c: 'prompt', x: '\n\n$ ' },
+  { t: 50,   c: 'cmd',    x: 'uv run pytest' },
+  { t: 600,  c: 'output', x: '\n=========== test session starts ===========' },
+  { t: 100,  c: 'output', x: '\nplatform darwin -- Python 3.12.13' },
+  { t: 100,  c: 'output', x: '\ncollected 2 items\n' },
+  { t: 200,  c: 'success',x: '\ntests/test_basic.py ..                  [100%]' },
+  { t: 300,  c: 'success',x: '\n\n=========== 2 passed in 0.03s ===========' },
+  { t: 500,  c: 'prompt', x: '\n\n$ ' },
+  { t: 50,   c: 'cmd',    x: 'git push' },
+  { t: 500,  c: 'success',x: '\n✓ CI green. Ship it.' },
+];
+
+const term = document.getElementById('term');
+let charIndex = 0, lineIndex = 0;
+
+function type() {
+  if (lineIndex >= lines.length) {
+    // Restart loop after pause
+    setTimeout(() => {
+      term.innerHTML = '';
+      lineIndex = 0;
+      charIndex = 0;
+      type();
+    }, 5000);
+    return;
+  }
+
+  const line = lines[lineIndex];
+  if (charIndex === 0) {
+    // Start a new span for this line
+    const span = document.createElement('span');
+    span.className = line.c;
+    span.dataset.line = lineIndex;
+    term.appendChild(span);
+    setTimeout(type, line.t);
+    charIndex = 0;
+    return;
+  }
+  // ...handled below
+}
+
+// Simpler approach: char-by-char append
+function runTerminal() {
+  term.innerHTML = '<span class="cursor"></span>';
+  let li = 0;
+  let ci = 0;
+
+  function step() {
+    if (li >= lines.length) {
+      setTimeout(() => { term.innerHTML = '<span class="cursor"></span>'; li = 0; ci = 0; step(); }, 6000);
+      return;
+    }
+    const line = lines[li];
+    if (ci === 0) {
+      // wait then start
+      setTimeout(() => {
+        const span = document.createElement('span');
+        span.className = line.c;
+        // Insert before cursor
+        const cursor = term.querySelector('.cursor');
+        term.insertBefore(span, cursor);
+        ci = 0.5; // marker that span exists
+        step();
+      }, line.t);
+      return;
+    }
+    // Append char
+    const text = line.x;
+    const spans = term.querySelectorAll('span:not(.cursor)');
+    const span = spans[spans.length - 1];
+    if (typeof ci === 'number' && ci < 1) ci = 0; // first time after marker
+    if (ci >= text.length) {
+      li++;
+      ci = 0;
+      step();
+      return;
+    }
+    span.textContent += text[ci];
+    ci++;
+    // Variable speed: faster for output, slower for typing
+    const speed = (line.c === 'cmd' || line.c === 'prompt') ? 35 : 8;
+    setTimeout(step, speed);
+  }
+  step();
+}
+
+// Start animation when page loads (respect reduced motion)
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  runTerminal();
+} else {
+  // Static fallback
+  term.innerHTML = lines.map(l => `<span class="${l.c}">${l.x}</span>`).join('');
+}
+
+// Fetch live template count from GitHub API
+fetch('https://api.github.com/users/oleg-koval/repos?per_page=100')
+  .then(r => r.json())
+  .then(repos => {
+    const templates = repos.filter(r => r.is_template);
+    document.getElementById('stat-tpl').textContent = templates.length;
+  })
+  .catch(() => { /* keep default */ });
+</script>
+
+</body>
+</html>

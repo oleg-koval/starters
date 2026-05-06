@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a0b"/>
+      <stop offset="100%" stop-color="#16161a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7eb6ff"/>
+      <stop offset="100%" stop-color="#d2a8ff"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="80%" cy="20%" r="60%">
+      <stop offset="0%" stop-color="#7eb6ff" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#7eb6ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <g transform="translate(80, 80)">
+    <text font-family="'SF Mono', Menlo, monospace" font-size="20" fill="#7eb6ff" font-weight="500">⚡ starters.olegkoval.com</text>
+  </g>
+
+  <g transform="translate(80, 200)">
+    <text font-family="'SF Pro Display', -apple-system, sans-serif" font-size="58" font-weight="700" fill="#ededed" letter-spacing="-2">
+      <tspan x="0" dy="0">ship your project</tspan>
+      <tspan x="0" dy="74">on the</tspan>
+      <tspan x="0" dy="74" fill="url(#accent)">first commit.</tspan>
+    </text>
+  </g>
+
+  <g transform="translate(80, 480)">
+    <text font-family="'SF Pro Display', -apple-system, sans-serif" font-size="20" fill="#a0a0a8" font-weight="400">
+      Production-ready scaffolds for TypeScript, Python, Go.
+    </text>
+    <text font-family="'SF Pro Display', -apple-system, sans-serif" font-size="20" fill="#a0a0a8" font-weight="400" y="30">
+      AGENTS.md - Conventional Commits - CI - Dependabot.
+    </text>
+  </g>
+
+  <g transform="translate(80, 555)">
+    <g>
+      <rect width="50" height="32" rx="6" fill="#16161a" stroke="#1f1f24"/>
+      <text x="25" y="21" font-family="'SF Mono', Menlo, monospace" font-size="14" font-weight="600" fill="#79c0ff" text-anchor="middle">TS</text>
+    </g>
+    <g transform="translate(60, 0)">
+      <rect width="50" height="32" rx="6" fill="#16161a" stroke="#1f1f24"/>
+      <text x="25" y="21" font-family="'SF Mono', Menlo, monospace" font-size="14" font-weight="600" fill="#f0c674" text-anchor="middle">PY</text>
+    </g>
+    <g transform="translate(120, 0)">
+      <rect width="50" height="32" rx="6" fill="#16161a" stroke="#1f1f24"/>
+      <text x="25" y="21" font-family="'SF Mono', Menlo, monospace" font-size="14" font-weight="600" fill="#7eb6ff" text-anchor="middle">GO</text>
+    </g>
+    <g transform="translate(180, 0)">
+      <rect width="70" height="32" rx="6" fill="#16161a" stroke="#1f1f24"/>
+      <text x="35" y="21" font-family="'SF Mono', Menlo, monospace" font-size="14" font-weight="600" fill="#ffa7c4" text-anchor="middle">SAAS</text>
+    </g>
+  </g>
+
+  <g transform="translate(720, 200)">
+    <rect width="420" height="260" rx="12" fill="#16161a" stroke="#1f1f24" stroke-width="1"/>
+    <rect width="420" height="38" rx="12" fill="#1f1f24"/>
+    <rect y="26" width="420" height="12" fill="#1f1f24"/>
+    <circle cx="20" cy="19" r="5" fill="#ff5f57"/>
+    <circle cx="40" cy="19" r="5" fill="#febc2e"/>
+    <circle cx="60" cy="19" r="5" fill="#28c840"/>
+
+    <text x="20" y="74" font-family="'SF Mono', Menlo, monospace" font-size="13" fill="#7ee787">$ </text>
+    <text x="34" y="74" font-family="'SF Mono', Menlo, monospace" font-size="13" fill="#ededed">gh repo create my-lib \</text>
+    <text x="34" y="94" font-family="'SF Mono', Menlo, monospace" font-size="13" fill="#ededed">  --template oleg-koval/py-starter</text>
+    <text x="20" y="120" font-family="'SF Mono', Menlo, monospace" font-size="12" fill="#a0a0a8">Created repository on GitHub</text>
+
+    <text x="20" y="156" font-family="'SF Mono', Menlo, monospace" font-size="13" fill="#7ee787">$ </text>
+    <text x="34" y="156" font-family="'SF Mono', Menlo, monospace" font-size="13" fill="#ededed">uv run pytest</text>
+    <text x="20" y="180" font-family="'SF Mono', Menlo, monospace" font-size="12" fill="#7ee787">tests/test_basic.py ..  [100%]</text>
+    <text x="20" y="204" font-family="'SF Mono', Menlo, monospace" font-size="12" fill="#7ee787">2 passed in 0.03s</text>
+
+    <text x="20" y="238" font-family="'SF Mono', Menlo, monospace" font-size="13" fill="#7ee787">$ </text>
+    <text x="34" y="238" font-family="'SF Mono', Menlo, monospace" font-size="13" fill="#ededed">git push</text>
+  </g>
+</svg>
