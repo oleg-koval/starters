@@ -2,7 +2,7 @@
 
 > Auto-generated index of [@oleg-koval](https://github.com/oleg-koval) template repositories.
 
-> Last updated: 2026-05-06 20:42 UTC · [4 templates found](https://github.com/oleg-koval?tab=repositories&q=&type=template)
+> Last updated: 2026-05-07 06:52 UTC · [4 templates found](https://github.com/oleg-koval?tab=repositories&q=&type=template)
 
 
 ## Templates
@@ -11,8 +11,8 @@
 
 | Repo | Description | Topics | Stars | CI |
 |------|-------------|--------|-------|-----|
-| [ts-npm-starter](https://github.com/oleg-koval/ts-npm-starter) | TypeScript / Node starter. AGENTS.md included. | `agents-md` `nodejs` `starter-template` `typescript` | ⭐ 1 | [![ci](https://github.com/oleg-koval/ts-npm-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/oleg-koval/ts-npm-starter/actions) |
 | [saas-init](https://github.com/oleg-koval/saas-init) | CLI scaffolding tool that generates production-ready SaaS projects with Next.js, auth, payments, database, and email | `agents-md` `starter-template` | ⭐ 4 | [![ci](https://github.com/oleg-koval/saas-init/actions/workflows/ci.yml/badge.svg)](https://github.com/oleg-koval/saas-init/actions) |
+| [ts-npm-starter](https://github.com/oleg-koval/ts-npm-starter) | TypeScript / Node starter. AGENTS.md included. | `agents-md` `nodejs` `starter-template` `typescript` | ⭐ 1 | [![ci](https://github.com/oleg-koval/ts-npm-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/oleg-koval/ts-npm-starter/actions) |
 
 ### 🐹 Go
 
