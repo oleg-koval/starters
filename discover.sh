@@ -72,6 +72,7 @@ LANG_EMOJI = {
     "Go":         "🐹",
     "Rust":       "🦀",
     "Shell":      "🐚",
+    "YAML":       "⚙️",
 }
 
 lines = []
@@ -90,7 +91,7 @@ for r in repos:
     by_lang[lang_name].append(r)
 
 # Sort languages: TS first, then Go, Python, then rest alphabetically
-LANG_ORDER = ["TypeScript", "JavaScript", "Go", "Python", "Rust", "Shell", "Other"]
+LANG_ORDER = ["TypeScript", "JavaScript", "Go", "Python", "Rust", "Shell", "YAML", "Other"]
 sorted_langs = sorted(by_lang.keys(), key=lambda l: LANG_ORDER.index(l) if l in LANG_ORDER else 99)
 
 for lang in sorted_langs:
