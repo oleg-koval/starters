@@ -1,20 +1,24 @@
 #!/usr/bin/env bash
-# discover.sh
-# Queries GitHub API for all template repos owned by GH_USER,
-# builds README.md. Runs locally and in GitHub Actions CI.
-
 set -euo pipefail
 
 GH_USER="${GH_USER:-oleg-koval}"
 OUTPUT="${1:-README.md}"
 
+if ! command -v gh >/dev/null 2>&1; then
+  echo "error: gh CLI is required to rebuild the starter index" >&2
+  exit 127
+fi
+
 echo "→ Fetching template repos for $GH_USER..."
 
-# Fetch all repos, filter to templates, sort by updated_at desc
-REPOS=$(gh api graphql -f query='
-{
-  user(login: "'"$GH_USER"'") {
-    repositories(first: 100, orderBy: {field: UPDATED_AT, direction: DESC}) {
+REPOS=$(gh api graphql --paginate --slurp -f login="$GH_USER" -f query='
+query($login: String!, $endCursor: String) {
+  user(login: $login) {
+    repositories(first: 100, after: $endCursor, orderBy: {field: UPDATED_AT, direction: DESC}) {
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
       nodes {
         name
         description
@@ -26,18 +30,12 @@ REPOS=$(gh api graphql -f query='
         }
         primaryLanguage { name }
         stargazerCount
-        defaultBranchRef {
-          target {
-            ... on Commit {
-              statusCheckRollup { state }
-            }
-          }
-        }
       }
     }
   }
-}' --jq '
-  .data.user.repositories.nodes
+}
+' --jq '
+  [.[].data.user.repositories.nodes[]]
   | map(select(.isTemplate == true))
   | sort_by(.updatedAt)
   | reverse
@@ -46,25 +44,21 @@ REPOS=$(gh api graphql -f query='
 COUNT=$(echo "$REPOS" | python3 -c "import json,sys; print(len(json.load(sys.stdin)))")
 echo "  Found $COUNT template repos"
 
-# Build README via Python (avoids bash string escaping hell)
 python3 - "$REPOS" "$GH_USER" "$OUTPUT" <<'PYEOF'
-import json, sys, datetime
+import datetime
+import html
+import json
+import sys
+from collections import defaultdict
 
 repos_json, gh_user, output_path = sys.argv[1], sys.argv[2], sys.argv[3]
 repos = json.loads(repos_json)
-now = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
+now = datetime.datetime.now(datetime.UTC).strftime("%Y-%m-%d %H:%M UTC")
 
-# CI badge helper
-def ci_badge(repo):
-    name = repo["name"]
-    url  = repo["url"]
-    # Common workflow file names
-    for wf in ["ci.yml", "code-quality.yml", "test.yml"]:
-        badge = f"![CI](https://github.com/{gh_user}/{name}/actions/workflows/{wf}/badge.svg)"
-        # We can't verify which file exists from here, use ci.yml as default
-    return f"[![CI](https://github.com/{gh_user}/{name}/actions/workflows/ci.yml/badge.svg)]({url}/actions)"
+def md_cell(value):
+    text = html.escape(str(value or ""), quote=False)
+    return text.replace("|", "\\|").replace("\n", " ")
 
-# Language emoji map
 LANG_EMOJI = {
     "TypeScript": "🔷",
     "JavaScript": "🟨",
@@ -82,17 +76,14 @@ lines.append(f"> Last updated: {now} · [{len(repos)} templates found](https://g
 lines.append("")
 lines.append("## Templates\n")
 
-# Group by primary language
-from collections import defaultdict
 by_lang = defaultdict(list)
 for r in repos:
     lang = r.get("primaryLanguage") or {}
     lang_name = lang.get("name") or "Other"
     by_lang[lang_name].append(r)
 
-# Sort languages: TS first, then Go, Python, then rest alphabetically
 LANG_ORDER = ["TypeScript", "JavaScript", "Go", "Python", "Rust", "Shell", "YAML", "Other"]
-sorted_langs = sorted(by_lang.keys(), key=lambda l: LANG_ORDER.index(l) if l in LANG_ORDER else 99)
+sorted_langs = sorted(by_lang.keys(), key=lambda l: (LANG_ORDER.index(l) if l in LANG_ORDER else len(LANG_ORDER), l))
 
 for lang in sorted_langs:
     emoji = LANG_EMOJI.get(lang, "📦")
@@ -100,11 +91,11 @@ for lang in sorted_langs:
     lines.append("| Repo | Description | Topics | Stars | CI |")
     lines.append("|------|-------------|--------|-------|-----|")
     for r in by_lang[lang]:
-        name  = r["name"]
-        desc  = r.get("description") or ""
-        url   = r["url"]
+        name = md_cell(r["name"])
+        desc = md_cell(r.get("description"))
+        url = r["url"]
         stars = r.get("stargazerCount", 0)
-        topics = [t["topic"]["name"] for t in r.get("repositoryTopics", {}).get("nodes", [])]
+        topics = [md_cell(t["topic"]["name"]) for t in r.get("repositoryTopics", {}).get("nodes", [])]
         topic_badges = " ".join([f"`{t}`" for t in topics]) if topics else "-"
         ci = f"[![ci]({url}/actions/workflows/ci.yml/badge.svg)]({url}/actions)"
         lines.append(f"| [{name}]({url}) | {desc} | {topic_badges} | ⭐ {stars} | {ci} |")
