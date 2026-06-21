@@ -6,13 +6,16 @@ on:
     - cron: "0 6 * * *"   # daily at 06:00 UTC
   workflow_dispatch:        # manual trigger from GitHub UI
 
+permissions:
+  contents: read
+
 jobs:
   rebuild:
     runs-on: ubuntu-latest
     permissions:
       contents: write       # needed to commit README back
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
       - name: Rebuild README
         env:
