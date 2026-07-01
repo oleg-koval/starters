@@ -11,6 +11,7 @@ fi
 
 echo "→ Fetching template repos for $GH_USER..."
 
+# ponytail: modern gh rejects --slurp combined with --jq, so pipe to jq instead
 REPOS=$(gh api graphql --paginate --slurp -f login="$GH_USER" -f query='
 query($login: String!, $endCursor: String) {
   user(login: $login) {
@@ -34,7 +35,7 @@ query($login: String!, $endCursor: String) {
     }
   }
 }
-' --jq '
+' | jq '
   [.[].data.user.repositories.nodes[]]
   | map(select(.isTemplate == true))
   | sort_by(.updatedAt)
