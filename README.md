@@ -2,7 +2,7 @@
 
 > Auto-generated index of [@oleg-koval](https://github.com/oleg-koval) template repositories.
 
-> Last updated: 2026-06-21 07:29 UTC · [5 templates found](https://github.com/oleg-koval?tab=repositories&q=&type=template)
+> Last updated: 2026-07-01 08:44 UTC · [5 templates found](https://github.com/oleg-koval?tab=repositories&q=&type=template)
 
 
 ## Templates
@@ -24,8 +24,8 @@
 
 | Repo | Description | Topics | Stars | CI |
 |------|-------------|--------|-------|-----|
-| [workflows](https://github.com/oleg-koval/workflows) | Reusable GitHub Actions workflows collection | `github-actions-workflow` `github-workflow` `starter-template` | ⭐ 1 | [![ci](https://github.com/oleg-koval/workflows/actions/workflows/ci.yml/badge.svg)](https://github.com/oleg-koval/workflows/actions) |
 | [py-starter](https://github.com/oleg-koval/py-starter) | Python starter: uv + ruff + ty + pytest. AGENTS.md included. | `agents-md` `python` `ruff` `starter-template` `uv` | ⭐ 1 | [![ci](https://github.com/oleg-koval/py-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/oleg-koval/py-starter/actions) |
+| [workflows](https://github.com/oleg-koval/workflows) | Reusable GitHub Actions workflows collection | `github-actions-workflow` `github-workflow` `starter-template` | ⭐ 1 | [![ci](https://github.com/oleg-koval/workflows/actions/workflows/ci.yml/badge.svg)](https://github.com/oleg-koval/workflows/actions) |
 
 ---
 
