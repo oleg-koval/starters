@@ -2,7 +2,7 @@
 
 > Auto-generated index of [@oleg-koval](https://github.com/oleg-koval) template repositories.
 
-> Last updated: 2026-07-25 07:45 UTC · [6 templates found](https://github.com/oleg-koval?tab=repositories&q=&type=template)
+> Last updated: 2026-07-26 07:59 UTC · [7 templates found](https://github.com/oleg-koval?tab=repositories&q=&type=template)
 
 
 ## Templates
@@ -27,6 +27,12 @@
 | [kitty-starter](https://github.com/oleg-koval/kitty-starter) | A minimal, generalized template for kitty terminal customizations (kittens, remote-control tools, documented kitty.conf snippets). | - | ⭐ 0 | [![ci](https://github.com/oleg-koval/kitty-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/oleg-koval/kitty-starter/actions) |
 | [py-starter](https://github.com/oleg-koval/py-starter) | Python starter: uv + ruff + ty + pytest. AGENTS.md included. | `agents-md` `python` `ruff` `starter-template` `uv` | ⭐ 1 | [![ci](https://github.com/oleg-koval/py-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/oleg-koval/py-starter/actions) |
 | [workflows](https://github.com/oleg-koval/workflows) | Reusable GitHub Actions workflows collection | `github-actions-workflow` `github-workflow` `starter-template` | ⭐ 1 | [![ci](https://github.com/oleg-koval/workflows/actions/workflows/ci.yml/badge.svg)](https://github.com/oleg-koval/workflows/actions) |
+
+### 📦 Monkey C
+
+| Repo | Description | Topics | Stars | CI |
+|------|-------------|--------|-------|-----|
+| [connectiq-starter](https://github.com/oleg-koval/connectiq-starter) | Garmin Connect IQ starter: Monkey C + strict type checks + unit tests + Make targets. AGENTS.md included. | `agents-md` `connect-iq` `garmin` `monkey-c` `starter-template` `watchface` | ⭐ 0 | [![ci](https://github.com/oleg-koval/connectiq-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/oleg-koval/connectiq-starter/actions) |
 
 ---
 
