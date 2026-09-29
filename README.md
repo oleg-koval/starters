@@ -2,7 +2,7 @@
 
 > Auto-generated index of [@oleg-koval](https://github.com/oleg-koval) template repositories.
 
-> Last updated: 2026-09-28 12:03 UTC · [7 templates found](https://github.com/oleg-koval?tab=repositories&q=&type=template)
+> Last updated: 2026-09-29 11:37 UTC · [7 templates found](https://github.com/oleg-koval?tab=repositories&q=&type=template)
 
 
 ## Templates
@@ -24,7 +24,7 @@
 
 | Repo | Description | Topics | Stars | CI |
 |------|-------------|--------|-------|-----|
-| [kitty-starter](https://github.com/oleg-koval/kitty-starter) | A minimal, generalized template for kitty terminal customizations (kittens, remote-control tools, documented kitty.conf snippets). | - | ⭐ 0 | [![ci](https://github.com/oleg-koval/kitty-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/oleg-koval/kitty-starter/actions) |
+| [kitty-starter](https://github.com/oleg-koval/kitty-starter) | A minimal, generalized template for kitty terminal customizations (kittens, remote-control tools, documented kitty.conf snippets). | - | ⭐ 1 | [![ci](https://github.com/oleg-koval/kitty-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/oleg-koval/kitty-starter/actions) |
 | [workflows](https://github.com/oleg-koval/workflows) | Reusable GitHub Actions workflows collection | `github-actions-workflow` `github-workflow` `starter-template` | ⭐ 1 | [![ci](https://github.com/oleg-koval/workflows/actions/workflows/ci.yml/badge.svg)](https://github.com/oleg-koval/workflows/actions) |
 
 ### 🐚 Shell
