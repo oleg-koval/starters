@@ -2,7 +2,7 @@
 
 > Auto-generated index of [@oleg-koval](https://github.com/oleg-koval) template repositories.
 
-> Last updated: 2026-10-17 06:00 UTC · [7 templates found](https://github.com/oleg-koval?tab=repositories&q=&type=template)
+> Last updated: 2026-10-18 06:00 UTC · [7 templates found](https://github.com/oleg-koval?tab=repositories&q=&type=template)
 
 
 ## Templates
@@ -25,13 +25,18 @@
 | Repo | Description | Topics | Stars | CI |
 |------|-------------|--------|-------|-----|
 | [kitty-starter](https://github.com/oleg-koval/kitty-starter) | A minimal, generalized template for kitty terminal customizations (kittens, remote-control tools, documented kitty.conf snippets). | - | ⭐ 1 | [![ci](https://github.com/oleg-koval/kitty-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/oleg-koval/kitty-starter/actions) |
-| [workflows](https://github.com/oleg-koval/workflows) | Reusable GitHub Actions workflows collection | `github-actions-workflow` `github-workflow` `starter-template` | ⭐ 1 | [![ci](https://github.com/oleg-koval/workflows/actions/workflows/ci.yml/badge.svg)](https://github.com/oleg-koval/workflows/actions) |
 
 ### 🐚 Shell
 
 | Repo | Description | Topics | Stars | CI |
 |------|-------------|--------|-------|-----|
 | [py-starter](https://github.com/oleg-koval/py-starter) | Python starter: uv + ruff + ty + pytest. AGENTS.md included. | `agents-md` `python` `ruff` `starter-template` `uv` | ⭐ 1 | [![ci](https://github.com/oleg-koval/py-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/oleg-koval/py-starter/actions) |
+
+### 📦 Other
+
+| Repo | Description | Topics | Stars | CI |
+|------|-------------|--------|-------|-----|
+| [workflows](https://github.com/oleg-koval/workflows) | Reusable GitHub Actions workflows collection | `github-actions-workflow` `github-workflow` `starter-template` | ⭐ 1 | [![ci](https://github.com/oleg-koval/workflows/actions/workflows/ci.yml/badge.svg)](https://github.com/oleg-koval/workflows/actions) |
 
 ### 📦 Monkey C
 
