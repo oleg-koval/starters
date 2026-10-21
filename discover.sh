@@ -25,6 +25,7 @@ query($login: String!, $endCursor: String) {
         description
         url
         isTemplate
+        isArchived
         updatedAt
         repositoryTopics(first: 10) {
           nodes { topic { name } }
@@ -37,7 +38,7 @@ query($login: String!, $endCursor: String) {
 }
 ' | jq '
   [.[].data.user.repositories.nodes[]]
-  | map(select(.isTemplate == true))
+  | map(select(.isTemplate == true and .isArchived == false))
   | sort_by(.updatedAt)
   | reverse
 ')
