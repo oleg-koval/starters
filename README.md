@@ -2,7 +2,7 @@
 
 > Auto-generated index of [@oleg-koval](https://github.com/oleg-koval) template repositories.
 
-> Last updated: 2026-10-20 11:55 UTC · [7 templates found](https://github.com/oleg-koval?tab=repositories&q=&type=template)
+> Last updated: 2026-10-21 06:00 UTC · [7 templates found](https://github.com/oleg-koval?tab=repositories&q=&type=template)
 
 
 ## Templates
@@ -11,8 +11,8 @@
 
 | Repo | Description | Topics | Stars | CI |
 |------|-------------|--------|-------|-----|
-| [ts-npm-starter](https://github.com/oleg-koval/ts-npm-starter) | TypeScript / Node starter. AGENTS.md included. | `agents-md` `nodejs` `starter-template` `typescript` `managed` | ⭐ 1 | [![ci](https://github.com/oleg-koval/ts-npm-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/oleg-koval/ts-npm-starter/actions) |
 | [saas-init](https://github.com/oleg-koval/saas-init) | CLI scaffolding tool that generates production-ready SaaS projects with Next.js, auth, payments, database, and email | `agents-md` `starter-template` `managed` | ⭐ 4 | [![ci](https://github.com/oleg-koval/saas-init/actions/workflows/ci.yml/badge.svg)](https://github.com/oleg-koval/saas-init/actions) |
+| [ts-npm-starter](https://github.com/oleg-koval/ts-npm-starter) | TypeScript / Node starter. AGENTS.md included. | `agents-md` `nodejs` `starter-template` `typescript` `managed` | ⭐ 1 | [![ci](https://github.com/oleg-koval/ts-npm-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/oleg-koval/ts-npm-starter/actions) |
 
 ### 🐹 Go
 
@@ -36,7 +36,7 @@
 
 | Repo | Description | Topics | Stars | CI |
 |------|-------------|--------|-------|-----|
-| [workflows](https://github.com/oleg-koval/workflows) | Reusable GitHub Actions workflows collection | `github-actions-workflow` `github-workflow` `starter-template` | ⭐ 1 | [![ci](https://github.com/oleg-koval/workflows/actions/workflows/ci.yml/badge.svg)](https://github.com/oleg-koval/workflows/actions) |
+| [workflows](https://github.com/oleg-koval/workflows) | Reusable GitHub Actions workflows collection | `github-actions-workflow` `github-workflow` `starter-template` `managed` | ⭐ 1 | [![ci](https://github.com/oleg-koval/workflows/actions/workflows/ci.yml/badge.svg)](https://github.com/oleg-koval/workflows/actions) |
 
 ### 📦 Monkey C
 
