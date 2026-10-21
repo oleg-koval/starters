@@ -2,7 +2,7 @@
 
 > Auto-generated index of [@oleg-koval](https://github.com/oleg-koval) template repositories.
 
-> Last updated: 2026-10-21 06:00 UTC · [7 templates found](https://github.com/oleg-koval?tab=repositories&q=&type=template)
+> Last updated: 2026-10-21 09:43 UTC · [6 templates found](https://github.com/oleg-koval?tab=repositories&q=&type=template)
 
 
 ## Templates
@@ -11,7 +11,6 @@
 
 | Repo | Description | Topics | Stars | CI |
 |------|-------------|--------|-------|-----|
-| [saas-init](https://github.com/oleg-koval/saas-init) | CLI scaffolding tool that generates production-ready SaaS projects with Next.js, auth, payments, database, and email | `agents-md` `starter-template` `managed` | ⭐ 4 | [![ci](https://github.com/oleg-koval/saas-init/actions/workflows/ci.yml/badge.svg)](https://github.com/oleg-koval/saas-init/actions) |
 | [ts-npm-starter](https://github.com/oleg-koval/ts-npm-starter) | TypeScript / Node starter. AGENTS.md included. | `agents-md` `nodejs` `starter-template` `typescript` `managed` | ⭐ 1 | [![ci](https://github.com/oleg-koval/ts-npm-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/oleg-koval/ts-npm-starter/actions) |
 
 ### 🐹 Go
