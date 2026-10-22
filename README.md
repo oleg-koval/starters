@@ -2,7 +2,7 @@
 
 > Auto-generated index of [@oleg-koval](https://github.com/oleg-koval) template repositories.
 
-> Last updated: 2026-10-21 09:43 UTC · [6 templates found](https://github.com/oleg-koval?tab=repositories&q=&type=template)
+> Last updated: 2026-10-22 06:00 UTC · [7 templates found](https://github.com/oleg-koval?tab=repositories&q=&type=template)
 
 
 ## Templates
@@ -24,6 +24,12 @@
 | Repo | Description | Topics | Stars | CI |
 |------|-------------|--------|-------|-----|
 | [kitty-starter](https://github.com/oleg-koval/kitty-starter) | A minimal, generalized template for kitty terminal customizations (kittens, remote-control tools, documented kitty.conf snippets). | `managed` | ⭐ 1 | [![ci](https://github.com/oleg-koval/kitty-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/oleg-koval/kitty-starter/actions) |
+
+### 🦀 Rust
+
+| Repo | Description | Topics | Stars | CI |
+|------|-------------|--------|-------|-----|
+| [rust-starter](https://github.com/oleg-koval/rust-starter) | Opinionated Rust starter with an enforced engineering contract: strict clippy, ast-grep rules, lefthook, gitleaks, cross-platform releases. | `agents-md` `clippy` `managed` `rust` `starter-template` | ⭐ 0 | [![ci](https://github.com/oleg-koval/rust-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/oleg-koval/rust-starter/actions) |
 
 ### 🐚 Shell
 
