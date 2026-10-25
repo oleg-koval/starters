@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Primary meta -->
-<title>starters · production-ready scaffolds for TypeScript, Python, Go</title>
+<title>starters · production-ready scaffolds for TypeScript, Expo, Python, Go</title>
 <meta name="description" content="One-command project scaffolds with AGENTS.md, conventional commits, GitHub Actions CI, and Dependabot baked in. Free. MIT. Maintained by Oleg Koval.">
-<meta name="keywords" content="starter template, project scaffold, typescript starter, python starter, go starter, AGENTS.md, conventional commits, github template, npx scaffold, uv ruff ty, golangci-lint">
+<meta name="keywords" content="starter template, project scaffold, typescript starter, expo starter, react native starter, python starter, go starter, AGENTS.md, conventional commits, github template, npx scaffold, uv ruff ty, golangci-lint">
 <meta name="author" content="Oleg Koval">
 <link rel="canonical" href="https://starters.olegkoval.com/">
 
@@ -18,7 +18,7 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://starters.olegkoval.com/">
-<meta property="og:title" content="starters · production-ready scaffolds for TypeScript, Python, Go">
+<meta property="og:title" content="starters · production-ready scaffolds for TypeScript, Expo, Python, Go">
 <meta property="og:description" content="One-command project scaffolds with AGENTS.md, conventional commits, GitHub Actions CI, and Dependabot baked in.">
 <meta property="og:image" content="https://starters.olegkoval.com/og.png">
 <meta property="og:image:width" content="1200">
@@ -29,7 +29,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@olegkoval">
 <meta name="twitter:creator" content="@olegkoval">
-<meta name="twitter:title" content="starters · production-ready scaffolds for TS, Python, Go">
+<meta name="twitter:title" content="starters · production-ready scaffolds for TS, Expo, Python, Go">
 <meta name="twitter:description" content="One-command project scaffolds with AGENTS.md, conventional commits, CI, and Dependabot baked in.">
 <meta name="twitter:image" content="https://starters.olegkoval.com/og.png">
 
@@ -415,6 +415,7 @@ section .section-sub {
 .card-cmd::before { content: '$ '; color: var(--text-muted); }
 
 .card.ts { --card-color: var(--cyan); }
+.card.expo { --card-color: var(--green); }
 .card.py { --card-color: var(--yellow); }
 .card.go { --card-color: var(--accent); }
 .card.saas { --card-color: var(--pink); }
@@ -523,7 +524,7 @@ footer a:hover { color: var(--text); }
 
     <div class="stats" id="stats">
       <div>
-        <div class="stat-num" id="stat-tpl">4</div>
+        <div class="stat-num" id="stat-tpl">8</div>
         <div class="stat-label">templates</div>
       </div>
       <div>
@@ -556,6 +557,15 @@ footer a:hover { color: var(--text); }
         <div class="card-name">ts-npm-starter</div>
         <p class="card-desc">TypeScript / Node starter with tsup, vitest, semantic-release, and TypeDoc. Publish-ready npm packages.</p>
         <code class="card-cmd">gh repo create my-lib --template oleg-koval/ts-npm-starter</code>
+      </a>
+
+      <a href="https://github.com/oleg-koval/expo-starter" class="card expo" rel="noopener">
+        <div class="card-head">
+          <span class="card-icon">EXPO</span>
+        </div>
+        <div class="card-name">expo-starter</div>
+        <p class="card-desc">Expo and React Native starter with TypeScript, Router, checks, and GitHub Actions for mobile apps.</p>
+        <code class="card-cmd">gh repo create my-app --template oleg-koval/expo-starter</code>
       </a>
 
       <a href="https://github.com/oleg-koval/py-starter" class="card py" rel="noopener">

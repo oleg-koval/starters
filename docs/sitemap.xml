@@ -12,6 +12,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://github.com/oleg-koval/expo-starter</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://github.com/oleg-koval/py-starter</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
