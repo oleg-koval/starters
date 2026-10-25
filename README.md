@@ -2,7 +2,7 @@
 
 > Auto-generated index of [@oleg-koval](https://github.com/oleg-koval) template repositories.
 
-> Last updated: 2026-10-25 06:00 UTC · [7 templates found](https://github.com/oleg-koval?tab=repositories&q=&type=template)
+> Last updated: 2026-10-25 10:35 UTC · [8 templates found](https://github.com/oleg-koval?tab=repositories&q=&type=template)
 
 
 ## Templates
@@ -12,6 +12,12 @@
 | Repo | Description | Topics | Stars | CI |
 |------|-------------|--------|-------|-----|
 | [ts-npm-starter](https://github.com/oleg-koval/ts-npm-starter) | TypeScript / Node starter. AGENTS.md included. | `agents-md` `nodejs` `starter-template` `typescript` `managed` | ⭐ 1 | [![ci](https://github.com/oleg-koval/ts-npm-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/oleg-koval/ts-npm-starter/actions) |
+
+### 🟨 JavaScript
+
+| Repo | Description | Topics | Stars | CI |
+|------|-------------|--------|-------|-----|
+| [expo-starter](https://github.com/oleg-koval/expo-starter) | Expo Router and TypeScript starter with Charter checks | `agents-md` `expo` `managed` `react-native` `starter-template` `typescript` | ⭐ 0 | [![ci](https://github.com/oleg-koval/expo-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/oleg-koval/expo-starter/actions) |
 
 ### 🐹 Go
 
