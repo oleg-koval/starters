@@ -2,7 +2,7 @@
 
 > Auto-generated index of [@oleg-koval](https://github.com/oleg-koval) template repositories.
 
-> Last updated: 2026-10-26 06:00 UTC · [8 templates found](https://github.com/oleg-koval?tab=repositories&q=&type=template)
+> Last updated: 2026-10-26 09:54 UTC · [9 templates found](https://github.com/oleg-koval?tab=repositories&q=&type=template)
 
 
 ## Templates
@@ -17,6 +17,7 @@
 
 | Repo | Description | Topics | Stars | CI |
 |------|-------------|--------|-------|-----|
+| [chrome-extension-starter](https://github.com/oleg-koval/chrome-extension-starter) | Chrome Extension Starter: Manifest V3 + TypeScript + Charter quality gates. | `agents-md` `browser-extension` `chrome-extension` `starter-template` `typescript` | ⭐ 0 | [![ci](https://github.com/oleg-koval/chrome-extension-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/oleg-koval/chrome-extension-starter/actions) |
 | [expo-starter](https://github.com/oleg-koval/expo-starter) | Expo Router and TypeScript starter with Charter checks | `agents-md` `expo` `managed` `react-native` `starter-template` `typescript` | ⭐ 0 | [![ci](https://github.com/oleg-koval/expo-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/oleg-koval/expo-starter/actions) |
 
 ### 🐹 Go
