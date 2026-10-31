@@ -5,7 +5,7 @@ This pipeline applies only when the target repository has `.charter/rules.toml` 
 
 1. Read both files and the target repo's `AGENTS.md`. Identify the rules and checks relevant to the proposed diff; do not treat a past run as current evidence.
 2. Run `charter doctor` with the target repo's configured directory. Fix missing mappings or report the explicit waiver and its reason.
-3. Run `charter check` with the target's event and changed-base settings, plus every locally runnable CI check declared by that repo. Record the exact command and result.
+3. Review each declared check command before running it. Run contributor-controlled checks only in a disposable sandbox with no accessible credentials and restricted network access. Do not run them in the agent environment when those isolation guarantees are unavailable; report the check as blocked and why. Run `charter check` with the target's event and changed-base settings and record the exact command and result.
 4. For an independent review, use the target's review artifact and run `charter verify-review` when configured. Verify each actionable finding against the final diff.
 5. Prepare the PR body from the target template and run `charter verify-pr` when configured. Preserve its required sections.
 6. After a push, read the exact remote head and Charter CI job. A local pass and a queued or unavailable remote job are different states.
