@@ -2,7 +2,7 @@
 
 > Auto-generated index of [@oleg-koval](https://github.com/oleg-koval) template repositories.
 
-> Last updated: 2026-11-17 06:01 UTC · [9 templates found](https://github.com/oleg-koval?tab=repositories&q=&type=template)
+> Last updated: 2026-11-18 00:01 UTC · [11 templates found](https://github.com/oleg-koval?tab=repositories&q=&type=template)
 
 
 ## Templates
@@ -17,6 +17,8 @@
 
 | Repo | Description | Topics | Stars | CI |
 |------|-------------|--------|-------|-----|
+| [herdr-mod-starter](https://github.com/oleg-koval/herdr-mod-starter) | Generic native Herdr mod template with pure domain logic, Charter checks and quality hooks. | `herdr` `javascript` `managed` `starter-template` | ⭐ 0 | [![ci](https://github.com/oleg-koval/herdr-mod-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/oleg-koval/herdr-mod-starter/actions) |
+| [herdr-layout-starter](https://github.com/oleg-koval/herdr-layout-starter) | Generic native Herdr layout template with Charter checks, quality hooks and safe installation. | `herdr` `javascript` `managed` `starter-template` | ⭐ 0 | [![ci](https://github.com/oleg-koval/herdr-layout-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/oleg-koval/herdr-layout-starter/actions) |
 | [chrome-extension-starter](https://github.com/oleg-koval/chrome-extension-starter) | Chrome Extension Starter: Manifest V3 + TypeScript + Charter quality gates. | `agents-md` `browser-extension` `chrome-extension` `starter-template` `typescript` `managed` | ⭐ 1 | [![ci](https://github.com/oleg-koval/chrome-extension-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/oleg-koval/chrome-extension-starter/actions) |
 | [expo-starter](https://github.com/oleg-koval/expo-starter) | Expo Router and TypeScript starter with Charter checks | `agents-md` `expo` `managed` `react-native` `starter-template` `typescript` | ⭐ 0 | [![ci](https://github.com/oleg-koval/expo-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/oleg-koval/expo-starter/actions) |
 
